@@ -89,17 +89,6 @@ module Net
 (?# 6:  LPAR     )(\()|\
 (?# 7:  RPAR     )(\)))/ni
 
-      def match(*args)
-        token = lookahead
-        unless args.include?(token.symbol)
-          parse_error('unexpected token %s (expected %s)',
-                      token.symbol.id2name,
-                      args.collect {|i| i.id2name}.join(" or "))
-        end
-        shift_token
-        return token
-      end
-
       alias_method :orig_next_token, :next_token
       def next_token
         case @lex_state
