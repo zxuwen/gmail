@@ -1,3 +1,11 @@
+This is based on gmail for ruby (https://github.com/nu7hatch/gmail), made compatible with xoauth2 for gmail authentication (from yesware's fork https://github.com/Yesware/gmail). 
+
+Changes:
+- Xoauth has been removed as it has been officially deprecated by google as of April 2012.
+- Added webmock and vcr for tests, due to slow tests with multiple client connections. 
+  If you would like to test connections, you can reload vcr using
+- Updated dependencies
+
 # GMail for Ruby
 
 A Rubyesque interface to Google's GMail, with all the tools you'll need. Search, 
@@ -91,16 +99,13 @@ You can also check if you are logged in at any time:
       gmail.logged_in?
     end
 
-### XOAuth authentication
+### XOAuth2 authentication
 
-From v0.4.0 it's possible to authenticate with your Gmail account using XOAuth
-method. It's very simple:
+It's possible to authenticate with your Gmail account using XOAuth2
+method:
 
-    gmail = Gmail.connect(:xoauth, "email@domain.com", 
-      :token           => 'TOKEN',
-      :secret          => 'TOKEN_SECRET',
-      :consumer_key    => 'CONSUMER_KEY',
-      :consumer_secret => 'CONSUMER_SECRET'
+    gmail = Gmail.connect(:xoauth2, "email@domain.com", 
+      {:oauth2_token          => 'TOKEN'}
     )
     
 For more information check out the [gmail_xoauth](https://github.com/nfo/gmail_xoauth)
