@@ -1,10 +1,7 @@
 shared_examples_for "a label manipulator" do
-  before(:all) do
-    subject.create("TEST")
-  end
-  after(:all) do
-    subject.delete("TEST")
-  end
+  
+  before { subject.create("TEST") }
+  after { subject.delete("TEST") }
 
   it "should get list of all available labels" do
     labels = subject

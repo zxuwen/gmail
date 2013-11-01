@@ -32,7 +32,7 @@ describe "Gmail client (Plain)" do
       lambda { 
         client = mock_client
         client.connect!.should be_true
-      }.should_not raise_error(Gmail::Client::ConnectionError)
+      }.should_not raise_error
     end
     
     it "should properly login to valid GMail account" do
@@ -56,7 +56,7 @@ describe "Gmail client (Plain)" do
         client = Gmail::Client::Plain.new("foo", "bar")
         client.connect.should be_true
         client.login.should_not be_true
-      }.should_not raise_error(Gmail::Client::AuthorizationError)
+      }.should_not raise_error
     end
     
     it "should properly logout from GMail" do 
@@ -108,7 +108,7 @@ describe "Gmail client (Plain)" do
       lambda { 
         client = mock_client
         client.deliver(Mail.new {}).should be_false
-      }.should_not raise_error(Gmail::Client::DeliveryError)
+      }.should_not raise_error
     end
     
     it "should raise error when mail can't be delivered and errors are disabled" do 
