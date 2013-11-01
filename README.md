@@ -2,8 +2,6 @@ This is based on gmail for ruby (https://github.com/nu7hatch/gmail), made compat
 
 Changes:
 - Xoauth has been removed as it has been officially deprecated by google as of April 2012.
-- Added webmock and vcr for tests, due to slow tests with multiple client connections. 
-  If you would like to test connections, you can reload vcr using
 - Updated dependencies
 
 # GMail for Ruby

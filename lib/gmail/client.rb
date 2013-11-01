@@ -42,7 +42,7 @@ module Gmail
     require 'gmail/client/imap_extensions'
     require 'gmail/client/base'
     require 'gmail/client/plain'
-    require 'gmail/client/xoauth'
+    # require 'gmail/client/xoauth'
     require 'gmail/client/xoauth2'
   end # Client
 end # Gmail
